@@ -1,10 +1,16 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
-  plugins: ['@typescript-eslint'],
+  extends: [
+    'airbnb-typescript/base',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
+  ],
   parserOptions: {
     project: './tsconfig.json',
   },
+  plugins: ['@typescript-eslint'],
   env: {
     browser: true,
     node: true,
@@ -28,14 +34,7 @@ module.exports = {
     'object-curly-newline': ['error', { consistent: true }],
     'spaced-comment': ['error', 'always', { markers: ['/'] }],
     'import/no-extraneous-dependencies': ['off', { devDependencies: ['**/*.test.ts', '**/*.spec.ts'] }],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        ts: 'never',
-      },
-    ],
+    'import/extensions': ['error', 'ignorePackages', { js: 'never', ts: 'never' }],
   },
   overrides: [
     {
