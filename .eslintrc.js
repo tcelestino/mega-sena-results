@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   plugins: ['@typescript-eslint'],
   parserOptions: {
     project: './tsconfig.json',
@@ -11,8 +11,11 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: { extensions: ['.ts'] },
+      node: { extensions: ['.js', '.ts'] },
     },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.js']
+    }
   },
   rules: {
     'no-unused-expressions': 'off',

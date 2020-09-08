@@ -1,3 +1,3 @@
-export default () => {
+export default (): void => {
   console.log('init project');
 };
