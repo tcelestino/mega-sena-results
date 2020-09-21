@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "rollup -c -w",
-    "dev": "node-dev src/*.js",
+    "dev": "node-dev src/*.js --notify=false",
     "lint": "eslint src --ext .ts,.js --max-warnings 3",
     "checktypes": "tsc"
   },
