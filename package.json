@@ -8,8 +8,6 @@
   },
   "author": "Tiago Celestino",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
   "engines": {
     "node": ">=12",
     "npm": ">=6"
@@ -21,8 +19,6 @@
     "checktypes": "tsc"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "15.0.0",
-    "@rollup/plugin-node-resolve": "9.0.0",
     "@types/node": "14.6.4",
     "@types/puppeteer": "3.0.2",
     "@typescript-eslint/eslint-plugin": "4.0.1",
@@ -36,9 +32,6 @@
     "lint-staged": "10.3.0",
     "node-dev": "5.2.0",
     "prettier": "2.1.1",
-    "rollup": "2.26.10",
-    "rollup-plugin-peer-deps-external": "2.2.3",
-    "rollup-plugin-typescript2": "0.27.2",
     "typescript": "4.0.2"
   },
   "lint-staged": {
@@ -47,6 +40,8 @@
     ]
   },
   "dependencies": {
+    "dotenv": "8.2.0",
+    "nodemailer": "6.4.11",
     "puppeteer": "5.3.0"
   }
 }
