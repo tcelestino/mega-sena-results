@@ -3,13 +3,13 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const PAGE_URL = 'https://g1.globo.com/loterias/megasena.ghtml';
+require('dotenv').config();
 
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  await page.goto(PAGE_URL);
+  await page.goto(process.env.PAGE_URL);
 
   const content = await page.evaluate(() => {
     let contestData = {};
@@ -39,6 +39,8 @@ const PAGE_URL = 'https://g1.globo.com/loterias/megasena.ghtml';
 
   const jsonData = JSON.stringify(content);
   fs.writeFileSync(`${__dirname}/contest.json`, jsonData);
+
+  console.log('success');
 
   await browser.close();
 })();
