@@ -1,5 +1,7 @@
 name: Main pipeline
 on:
+  schedule:
+    - cron: '50 23 * * 3,6'
   push:
     branches:
       - main
