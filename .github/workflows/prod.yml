@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  checktypes:
+  runner:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,5 +15,16 @@ jobs:
           node-version: '12'
       - name: Install packages
         run: yarn install
-      - name: Checking...
-        run: yarn run checktypes
+      - name: Get contest information
+        run: node ./src/index.js
+        env:
+          PAGE_URL: ${{ secrets.PAGE_URL }}
+      - name: Send email
+        run: node ./src/send.js
+        env:
+          EMAIL_SERVICE: ${{ secrets.EMAIL_SERVICE }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+
