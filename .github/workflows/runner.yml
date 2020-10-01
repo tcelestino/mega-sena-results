@@ -1,7 +1,7 @@
-name: Main pipeline
+name: Send results
 on:
   schedule:
-    - cron: '50 23 * * 3,6'
+    - cron: '00 09 * * 4,0'
   push:
     branches:
       - main
