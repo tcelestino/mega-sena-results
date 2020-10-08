@@ -10,7 +10,7 @@ Send latest results [Mega Sena](http://loterias.caixa.gov.br/wps/portal/loterias
 ## Packages
 
 * [nodemailer](https://nodemailer.com/)
-* [Puppeteer](https://github.com/puppeteer/puppeteer#readme)
+* [Puppeteer](https://github.com/puppeteer/puppeteer)
 * [dotenv](https://github.com/motdotla/dotenv)
 
 ## Installation
