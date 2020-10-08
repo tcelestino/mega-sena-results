@@ -1,6 +1,6 @@
 # Mega Sena Results
 
-Send latest results [Mega Sena](http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena/) contest via email using [Github Actions](https://github.com/features/actions)
+Send the latest [Mega Sena](http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena/) results contest via email with web scraping and [Github Actions](https://github.com/features/actions)
 
 ## Requirements
 
