@@ -78,7 +78,7 @@ Is wrong? No!! Github Actions does not enable to timezone settings. This schedul
 
 ## TODO
 
-See [issues](https://github.com/tcelestino/mega-sena-results/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+See [issues](https://github.com/tcelestino/mega-sena-results/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or the [kanban](https://github.com/tcelestino/mega-sena-results/projects/1)
 
 ## Credits
 
