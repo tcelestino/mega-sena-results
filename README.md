@@ -54,7 +54,7 @@ npm run start
 
 ### On Github Actions
 
-Create Secrets with environments variables.
+Create [Secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) with environments variables.
 
 Actually the action will run at 6am on thursday and sunday. You can change this schedule in [.github/workflow/runner.yml](.github/workflow/runner.yml).
 
