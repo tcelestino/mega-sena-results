@@ -86,4 +86,4 @@ See [issues](https://github.com/tcelestino/mega-sena-results/issues?q=is%3Aissue
 
 ## License
 
-TODO: Write license
+[MIT](LICENSE)
