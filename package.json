@@ -13,7 +13,6 @@
     "npm": ">=6"
   },
   "scripts": {
-    "build": "rollup -c -w",
     "dev": "node-dev src/*.js --notify=false",
     "lint": "eslint src --ext .ts,.js --max-warnings 3",
     "start": "npm run scraping && npm run send",
@@ -31,7 +30,6 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-prettier": "3.1.4",
-    "husky": "4.3.0",
     "lint-staged": "10.3.0",
     "node-dev": "5.2.0",
     "prettier": "2.1.1",
