@@ -49,7 +49,7 @@ _*EMAIL_PASS - if you use Gmail as email service and if you are using 2FA you wo
 After did the configuration, run
 
 ```bash
-npm run start
+yarn start
 ```
 
 ### On Github Actions
