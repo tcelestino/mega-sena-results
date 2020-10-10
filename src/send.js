@@ -7,6 +7,12 @@ require('dotenv').config();
 
 const CONTEST_FILE = `${__dirname}/contest.json`;
 
+function showPrize({ hasWinner, prize }) {
+  if (hasWinner) return '';
+
+  return `<h2>Valor prêmio: R$ ${prize}</h2>`;
+}
+
 function send() {
   try {
     const data = fs.readFileSync(CONTEST_FILE, 'utf-8');
@@ -34,12 +40,11 @@ function send() {
     const message = {
       from: 'mega_sena_results@gmail.com',
       to: `${process.env.EMAIL_USER}`,
-      subject: `Mega Sena Resultado: ${json.name} - ${json.date}`,
+      subject: `Resultado Mega Sena: ${json.name} - ${json.date}`,
       html: `
         <h2>Números sorteados: ${results}</h2>
         <h2>Houve ganhador: ${json.hasWinner ? 'Sim' : 'Não'}</h2>
-        <h2>Valor prêmio: R$ ${json.prize}</h2>
-      `,
+        ${showPrize(json)}`,
     };
 
     transporter.sendMail(message, (error, info) => {
