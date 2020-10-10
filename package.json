@@ -16,6 +16,9 @@
     "build": "rollup -c -w",
     "dev": "node-dev src/*.js --notify=false",
     "lint": "eslint src --ext .ts,.js --max-warnings 3",
+    "start": "npm run scraping && npm run send",
+    "scraping": "node src/index.js",
+    "send": "node src/send.js",
     "checktypes": "tsc"
   },
   "devDependencies": {
