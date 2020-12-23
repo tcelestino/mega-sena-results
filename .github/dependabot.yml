@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "10:00"
+      timezone: "America/Bahia"
+    commit-message:
+      prefix: "chore:"
+    reviewers:
+      - "tcelestino"
+    open-pull-requests-limit: 3
