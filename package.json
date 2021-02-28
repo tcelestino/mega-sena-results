@@ -20,6 +20,7 @@
     "send": "node src/send.js"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "7.19.0",
     "eslint-config-airbnb-typescript": "^10.0.2",
     "eslint-config-prettier": "6.11.0",
@@ -38,5 +39,10 @@
     "dotenv": "8.2.0",
     "nodemailer": "6.4.18",
     "puppeteer": "7.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
