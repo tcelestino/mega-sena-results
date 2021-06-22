@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-var-requires */
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
