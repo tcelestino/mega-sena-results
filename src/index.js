@@ -10,29 +10,39 @@ require('dotenv').config();
   await page.goto(process.env.PAGE_URL);
 
   const content = await page.evaluate(() => {
-    let contestData = {};
-    let results = [];
-    const removeSpace = (text) => text.trim();
-    const hasWinner = (array) => !array.includes('ACUMULADO');
+    const $lotteryDetails = document.querySelector('.lottery-info > span');
+    const lotteryInfos = $lotteryDetails.innerText.trim().split('|');
+    const totalInfos = lotteryInfos.length;
 
-    const $lotteryInfo = document.querySelector('.content-lottery__info');
-    const $lotteryAmmount = document.querySelector('.content-lottery__ammount');
-    const $lotteryResults = document.querySelectorAll('.content-lottery__result');
+    for (let i = 0; i < totalInfos; i++) {
+      lotteryInfos[i] = lotteryInfos[i]
+        .replace(/\s/g, '')
+        .replace(/([A-Z])/g, '')
+        .replace('Á', ''); // FIXME: regex
 
-    const lotteryInfo = $lotteryInfo.innerText.split('-');
-    const lotteryAmmount = $lotteryAmmount.innerText.replace(':', '').split(' ');
+      if (lotteryInfos[i] === '') {
+        lotteryInfos.splice(i, 1);
+      }
+    }
 
-    $lotteryResults.forEach((item) => results.push(item.innerText));
+    const $lotteryResults = document.querySelectorAll('.lt-result.no-margin > div');
+    const results = [...$lotteryResults].map((item) => item.innerText);
 
-    contestData = {
-      name: removeSpace(lotteryInfo[0]),
-      date: removeSpace(lotteryInfo[1]),
-      hasWinner: hasWinner(lotteryAmmount),
-      prize: hasWinner(lotteryAmmount) ? '' : lotteryAmmount[2],
+    const $winner = document.querySelector('.winners');
+    const hasWinner = $winner.innerText !== 'ACUMULOU';
+
+    const $lotteryAmmount = document.querySelector('.resultHead > .alignCenterValor');
+    const ammount = $lotteryAmmount.innerText;
+
+    const data = {
+      name: `CONCURSO ${lotteryInfos[0]}`,
+      date: lotteryInfos[1],
+      hasWinner,
+      prize: hasWinner ? '' : ammount,
       results,
     };
 
-    return contestData;
+    return data;
   });
 
   const jsonData = JSON.stringify(content);
