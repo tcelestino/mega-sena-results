@@ -38,15 +38,16 @@ Rename .env.example to .env
 | **EMAIL_PORT** | Set port to host | 465 |
 | **EMAIL_USER** | Email | your_email@gmail.com |
 | **EMAIL_PASS** | Password email | -- |
-| **PAGE_URL** | Page to scraping results | https://g1.globo.com/loterias/megasena.ghtml |
+| **EMAIL_FROM** | Set email from | something@email.com |
+| **PAGE_URL** | Page to scraping results | https://noticias.uol.com.br/loterias/mega-sena/ |
 
-_*EMAIL_PASS - if you use Gmail as email service and if you are using 2FA you would have to create an “Application Specific” password for Nodemailer to work. [Click here](https://security.google.com/settings/security/apppasswords)
+*EMAIL_PASS* - if you use Gmail as email service and if you are using 2FA you would have to create an “Application Specific” password for Nodemailer to work. [Click here](https://security.google.com/settings/security/apppasswords)
 
 ## How to use
 
 ### Local
 
-After did the configuration, run
+Set enviroments and run:
 
 ```bash
 yarn start
