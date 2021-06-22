@@ -34,21 +34,19 @@ require('dotenv').config();
     const $lotteryAmmount = document.querySelector('.resultHead > .alignCenterValor');
     const ammount = $lotteryAmmount.innerText;
 
-    const data = {
+    return {
       name: `CONCURSO ${lotteryInfos[0]}`,
       date: lotteryInfos[1],
       hasWinner,
       prize: hasWinner ? '' : ammount,
       results,
     };
-
-    return data;
   });
 
   const jsonData = JSON.stringify(content);
   fs.writeFileSync(`${__dirname}/contest.json`, jsonData);
 
-  console.log('success');
+  console.log('success scraping');
 
   await browser.close();
 })();
