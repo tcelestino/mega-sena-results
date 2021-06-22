@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 
@@ -32,13 +30,12 @@ function send() {
     let results = '';
     let resultsLength = json.results.length;
 
-    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < resultsLength; i++) {
       results += `${json.results[i]} `;
     }
 
     const message = {
-      from: 'mega_sena_results@gmail.com',
+      from: process.env.EMAIL_FROM,
       to: `${process.env.EMAIL_USER}`,
       subject: `Resultado Mega Sena: ${json.name} - ${json.date}`,
       html: `
