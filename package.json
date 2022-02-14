@@ -37,7 +37,7 @@
   "dependencies": {
     "dotenv": "16.0.0",
     "nodemailer": "6.7.2",
-    "puppeteer": "11.0.0"
+    "puppeteer": "13.3.2"
   },
   "config": {
     "commitizen": {
