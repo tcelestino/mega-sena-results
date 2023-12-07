@@ -1,7 +1,7 @@
 name: Send results
 on:
   schedule:
-    - cron: '00 09 * * 4,0'
+    - cron: '0 9 * * 3,5,7'
   push:
     branches:
       - main
