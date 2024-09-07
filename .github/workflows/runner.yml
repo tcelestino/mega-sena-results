@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - build/update-pkg-dependencies
 jobs:
   runner:
     runs-on: ubuntu-latest
