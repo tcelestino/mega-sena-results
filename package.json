@@ -38,7 +38,6 @@
     "add": "2.0.6",
     "dotenv": "16.4.5",
     "nodemailer": "6.9.15",
-    "puppeteer": "23.3.0",
-    "yarn": "1.22.22"
+    "puppeteer": "23.3.0"
   }
 }
