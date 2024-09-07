@@ -16,7 +16,7 @@ function send() {
     const data = fs.readFileSync(CONTEST_FILE, 'utf-8');
     const json = JSON.parse(data);
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       service: process.env.EMAIL_SERVICE,
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
@@ -28,7 +28,7 @@ function send() {
     });
 
     let results = '';
-    let resultsLength = json.results.length;
+    const resultsLength = json.results.length;
 
     for (let i = 0; i < resultsLength; i++) {
       results += `${json.results[i]} `;
