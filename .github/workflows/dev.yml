@@ -1,0 +1,31 @@
+name: Development process
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install packages
+        run: yarn install
+      - name: Lint files
+        run: yarn lint
+      - name: Get information
+        run: node ./src/index.js
+        env:
+          PAGE_URL: ${{ secrets.PAGE_URL }}
+      - name: Send email
+        run: node ./src/send.js
+        env:
+          EMAIL_SERVICE: ${{ secrets.EMAIL_SERVICE }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
