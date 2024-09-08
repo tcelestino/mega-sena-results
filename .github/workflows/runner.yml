@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - feat/playwright
 jobs:
   runner:
     runs-on: ubuntu-latest
@@ -17,6 +18,8 @@ jobs:
           node-version: '18'
       - name: Install packages
         run: yarn install
+      - name: Install Chrome
+        run: npx playwright install chromium
       - name: Get information
         run: node ./src/index.js
         env:
