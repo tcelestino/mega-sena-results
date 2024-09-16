@@ -18,3 +18,9 @@ updates:
         update-types:
           - patch
           - minor
+    groups:
+      minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - "patch"
+          - "minor"
