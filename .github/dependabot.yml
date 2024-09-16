@@ -15,9 +15,9 @@ updates:
     open-pull-requests-limit: 3
     allow:
       - dependency-type: "all"
-    groups:
-      minor-and-patch:
-        applies-to: version-updates
-        # update-types:
-        #   - "patch"
-        #   - "minor"
+    # groups:
+    #   minor-and-patch:
+    #     applies-to: version-updates
+    #     # update-types:
+    #     #   - "patch"
+    #     #   - "minor"
