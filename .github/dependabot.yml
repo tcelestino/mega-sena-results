@@ -18,6 +18,6 @@ updates:
     groups:
       minor-and-patch:
         applies-to: version-updates
-        # update-types:
-        #   - "patch"
-        #   - "minor"
+        update-types:
+          - "patch"
+          - "minor"
