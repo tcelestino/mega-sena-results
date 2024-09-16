@@ -6,8 +6,15 @@ updates:
       interval: "weekly"
       time: "10:00"
       timezone: "America/Bahia"
+    labels:
+      - "dependabot"
     commit-message:
       prefix: "chore:"
     reviewers:
       - "tcelestino"
     open-pull-requests-limit: 3
+    allow:
+      - dependency-type: "all"
+        update-types:
+          - patch
+          - minor
