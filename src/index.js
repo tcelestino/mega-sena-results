@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer');
+const playwright = require('playwright');
 const fs = require('fs');
 
 require('dotenv').config();
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await playwright.chromium.launch();
   const page = await browser.newPage();
 
   await page.goto(process.env.PAGE_URL);
