@@ -4,14 +4,19 @@ require('dotenv').config();
 
 // Function to clean and format lottery information
 function formatLotteryInfo(lotteryInfos) {
-  return lotteryInfos.map(info => 
-    info.replace(/\s/g, '').replace(/([A-Z])/g, '').replace('Á', '')
-  ).filter(info => info !== '');
+  return lotteryInfos
+    .map((info) =>
+      info
+        .replace(/\s/g, '')
+        .replace(/([A-Z])/g, '')
+        .replace('Á', '')
+    )
+    .filter((info) => info !== '');
 }
 
 // Function to extract lottery results
 function extractResults($lotteryResults) {
-  return [...$lotteryResults].map(item => item.innerText);
+  return [...$lotteryResults].map((item) => item.innerText);
 }
 
 // Function to scrape lottery data from the page
